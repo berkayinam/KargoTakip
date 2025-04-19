@@ -1,6 +1,14 @@
 # Created by https://www.toptal.com/developers/gitignore/api/csharp
 # Edit at https://www.toptal.com/developers/gitignore?templates=csharp
 
+# Environment files
+.env
+.env.*
+.env.local
+.env.development
+.env.test
+.env.production
+
 *.rsuser
 *.suo
 *.user
@@ -346,8 +354,6 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
-
-
 
 .vs
 
