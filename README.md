@@ -1,42 +1,94 @@
-```markdown
-# Project Title (Please update with the actual project title)
+# KargoTakip (Cargo Tracking System)
 
-This project ... (Provide a brief description of the project)
+A modern .NET Core API project for cargo tracking and management.
 
+## Features
 
-## Recent Updates
+- Cargo tracking and management
+- RESTful API endpoints
+- Secure authentication and authorization
+- Database integration
+- Docker support
 
-### Version 0.1.0 (Latest)
+## Technologies
 
-* **Release Date:** YYYY-MM-DD (Please add the release date)
-* **Commit Message:** Detay, TalepID ve Update kısmı eklendi
-* **Reason for Version Change:** Automated version update
-* **Summary of Changes:** Added "Detay," "TalepID," and "Update" sections.  (Consider expanding on what these sections are and their purpose)
+- .NET Core
+- Entity Framework Core
+- SQL Server
+- Docker
+- Swagger/OpenAPI
 
+## Prerequisites
 
-## Getting Started (Optional Section - Add instructions if applicable)
+- .NET Core SDK 7.0 or later
+- Docker (optional)
+- SQL Server
 
-*(Add instructions on how to use or contribute to the project)*
+## Getting Started
 
-
-## Contributing (Optional Section)
-
-*(Add contribution guidelines if applicable)*
-
-
-## License (Optional Section)
-
-*(Specify the license under which the project is distributed)*
+1. Clone the repository:
+```bash
+git clone [repository-url]
+cd KargoTakip
 ```
 
-**Key improvements in this updated README:**
+2. Configure the environment:
+   - Create a `.env` file in the root directory
+   - Add necessary environment variables (see `.env.example` for reference)
 
-* **Clear Version Header:** Uses "Version 0.1.0 (Latest)" to clearly indicate the current version.
-* **Release Date:**  Prompts for a release date to be added for better tracking.
-* **Improved Summary:** Encourages more detail in the summary of changes for better understanding.
-* **Optional Sections:** Includes optional sections for "Getting Started," "Contributing," and "License" to make the README more comprehensive as the project grows.
-* **Project Title Placeholder:** Highlights the need to replace the placeholder with the actual project title.
-* **Project Description Placeholder:**  Encourages a brief project description to be added.
+3. Run the application:
 
+```bash
+# Using .NET CLI
+dotnet restore
+dotnet build
+dotnet run
 
-This structured format allows for easier tracking of version history directly within the README, making it more informative for users and contributors.  As new versions are released, simply add a new version section below the "Recent Updates" heading, keeping the latest version at the top. Remember to update the "(Latest)" tag accordingly.
+# Using Docker
+docker-compose up --build
+```
+
+4. Access the API:
+   - API: `http://localhost:5000`
+   - Swagger Documentation: `http://localhost:5000/swagger`
+
+## API Endpoints
+
+- `GET /api/kargo` - Get all cargo records
+- `GET /api/kargo/{id}` - Get cargo by ID
+- `POST /api/kargo` - Create new cargo record
+- `PUT /api/kargo/{id}` - Update cargo record
+- `DELETE /api/kargo/{id}` - Delete cargo record
+
+## Project Structure
+
+```
+KargoTakip/
+├── Controllers/     # API Controllers
+├── Models/         # Data models and DTOs
+├── Services/       # Business logic
+├── Data/          # Database context and configurations
+├── Dockerfile     # Docker configuration
+└── README.md      # Project documentation
+```
+
+## Configuration
+
+The application uses environment variables for configuration. Create a `.env` file with the following variables:
+
+```env
+DB_CONNECTION_STRING=your_connection_string
+JWT_SECRET=your_jwt_secret
+```
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
